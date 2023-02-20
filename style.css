@@ -1,0 +1,22 @@
+#container{
+  height: 750px;
+}
+
+div.screen > p{
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+
+.module{
+  overflow: hidden;
+  width: 750px;
+}
+
+.genButton{
+  float: left;
+}
+
+.boxCount{
+  float: right;
+}
