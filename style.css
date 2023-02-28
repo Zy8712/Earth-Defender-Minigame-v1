@@ -1,3 +1,16 @@
+body{
+  background-image: url("space.jpg");
+}
+
+.logoTop{
+  height: 50px;
+  text-align: center;
+}
+
+div.logoTop > img{
+  height: 100px;
+}
+
 #container{
   height: 750px;
 }
@@ -19,4 +32,5 @@ div.screen > p{
 
 .boxCount{
   float: right;
+  color: white;
 }
