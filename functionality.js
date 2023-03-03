@@ -2,13 +2,20 @@ var boxCounter = 0;
 var start = false;
 var earthCounterTotal = 0;
 var earthRemaining = 0;
+var threatTotal = 0;
+var threatRemaining = 0;
+
+/* Upon loading */
 window.onload = function(){
   createBoxes();
   $("myButton").observe("click", createBoxes);
 }
 
 function createBoxes(){
+  /* Array containing paths to possible assets to generate */
   var planets = ["./Planets/Ice.png", "./Planets/Lava.png", "./Planets/Terran.png", "./Planets/Baren.png", "./Planets/Black_hole.png"];
+
+  /* Generate 100 boxes */
   for(var i = 0; i < 100; i++){
     var newP = document.createElement("p");
     var newImg = document.createElement("img");
@@ -22,6 +29,10 @@ function createBoxes(){
     if(randomNum == 2){
       earthCounterTotal++;
       earthRemaining++;
+    }
+    else{
+      threatTotal++;
+      threatRemaining++;
     }
     newImg.src = planets[randomNum];
     newP.appendChild(newImg);
@@ -43,6 +54,23 @@ function removeBox(){
   if(image.getAttribute("src") == "./Planets/Terran.png"){
     earthRemaining--;
   }
+  else{
+    threatRemaining--;
+  }
   $("count").innerHTML = "Boxes Left: " +boxCounter +", Earths Remaining: " +earthRemaining;
   $("container").removeChild(this);
 }
+
+/*
+function updateStatus(){
+
+}
+
+*/
+
+/*
+function endgameStatistics(){
+
+
+}
+*/
